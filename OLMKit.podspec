@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.public_header_files = "xcode/OLMKit/*.h"
 
   s.source       = {
-    :git => "https://github.com/zhangbenwei/olm/olm.git",
+    :git => "https://github.com/zhangbenwei/olm.git",
     :tag => s.version.to_s
   }
 
