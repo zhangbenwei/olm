@@ -1,12 +1,8 @@
 Pod::Spec.new do |s|
 
-  # The libolm version
-  MAJOR = 3
-  MINOR = 2
-  PATCH = 15
-
+ 
   s.name         = "OLMKit"
-  s.version      = "#{MAJOR}.#{MINOR}.#{PATCH}"
+  s.version      = "3.2.15"
   s.summary      = "An Objective-C wrapper of olm (https://github.com/zhangbenwei/olm)"
 
   s.description  = <<-DESC
@@ -23,15 +19,15 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = "10.9"
 
   # Expose the Objective-C wrapper API of libolm
-  s.public_header_files = "OLMKit/*.h"
+  s.public_header_files = "xcode/OLMKit/*.h"
 
   s.source       = {
     :git => "https://github.com/zhangbenwei/olm/olm.git",
     :tag => s.version.to_s
   }
 
-  s.source_files = "OLMKit/*.{h,m}", "include/**/*.{h,hh}", "src/*.{c,cpp}", "lib/crypto-algorithms/sha256.c",  "lib/crypto-algorithms/aes.c", "lib/curve25519-donna/curve25519-donna.c"
-  s.private_header_files = "OLMKit/*_Private.h"
+  s.source_files = "xcode/OLMKit/*.{h,m}", "include/**/*.{h,hh}", "src/*.{c,cpp}", "lib/crypto-algorithms/sha256.c",  "lib/crypto-algorithms/aes.c", "lib/curve25519-donna/curve25519-donna.c"
+  s.private_header_files = "xcode/OLMKit/*_Private.h"
 
   # Those files (including .c) are included by ed25519.c. We do not want to compile them twice
   s.preserve_paths = "lib/ed25519/**/*.{h,c}"
@@ -41,7 +37,7 @@ Pod::Spec.new do |s|
 
   # Use the same compiler options for C and C++ as olm/Makefile
 
-  s.compiler_flags = "-g -O3 -DOLMLIB_VERSION_MAJOR=#{MAJOR} -DOLMLIB_VERSION_MINOR=#{MINOR} -DOLMLIB_VERSION_PATCH=#{PATCH}"
+  s.compiler_flags = "-g -O3 -DOLMLIB_VERSION_MAJOR=3 -DOLMLIB_VERSION_MINOR=2 -DOLMLIB_VERSION_PATCH=15"
 
   # For headers search paths, manage first the normal installation. Then, use paths used
   # when the pod is local
