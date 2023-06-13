@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
  
-  s.name         = "OLMKit"
+  s.name         = "OLMZKit"
   s.version      = "3.2.15"
   s.summary      = "An Objective-C wrapper of olm (https://github.com/zhangbenwei/olm)"
 
@@ -15,8 +15,7 @@ Pod::Spec.new do |s|
 
   s.authors            = { "zhangbenwei" => "978866241@qq.com" }
 
-  s.ios.deployment_target = "6.0"
-  s.osx.deployment_target = "10.9"
+  s.ios.deployment_target = "14.0"
 
   # Expose the Objective-C wrapper API of libolm
   s.public_header_files = "xcode/OLMKit/*.h"
